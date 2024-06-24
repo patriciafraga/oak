@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="btnNovoProduto" style="display: none">Novo Produto</button>
+
+    <div id="form-container">
+      <form>
+      <img src="img/oak.jpg" alt="oak Tecnologia" id ="logo" />
+      <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required />
+        <br />
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" required />
+        <br />
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor" required pattern="^\d+(\,\d{1,2})?$">
+        <br />
+        <label>Disponibilidade:</label>
+        <input
+          type="radio"
+          id="sim"
+          name="disponibilidade"
+          value="Sim"
+          checked
+        />
+        Sim
+        <input type="radio" id="nao" name="disponibilidade" value="Não" /> Não
+        <br />
+        <button type="submit">Cadastrar Produto</button>
+      </form>
+    </div>
+
+    <div id="list-container" style="display: none">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
